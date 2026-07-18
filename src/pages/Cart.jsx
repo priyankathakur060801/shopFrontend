@@ -49,9 +49,73 @@ const remove = async (id) => {
       <>
         <Navbar />
 
-        <Typography textAlign="center" mt={5}>
-          Cart is Empty
-        </Typography>
+        <Box
+          sx={{
+            minHeight: "calc(100vh - 70px)",
+            display: "flex",
+            justifyContent: "center",
+            alignItems: "center",
+            bgcolor: "#f6fff8",
+            px: 2,
+          }}
+        >
+          <Card
+            sx={{
+              maxWidth: 520,
+              width: "100%",
+              textAlign: "center",
+              p: 5,
+              borderRadius: 5,
+              bgcolor: "#fff",
+              border: "2px solid #d8f3e2",
+              boxShadow: "0 15px 40px rgba(11,123,60,.15)",
+            }}
+          >
+            <Typography
+              sx={{
+                fontSize: { xs: 70, md: 90 },
+              }}
+            >
+              🛒
+            </Typography>
+
+            <Typography variant="h4" fontWeight="900" color="#0b7b3c" mt={2}>
+              Your Cart is Empty
+            </Typography>
+
+            <Typography
+              color="text.secondary"
+              mt={2}
+              fontSize={17}
+              lineHeight={1.8}
+            >
+              Looks like you haven't added anything to your cart yet. Browse our
+              latest products and find something you'll love.
+            </Typography>
+
+            <Button
+              variant="contained"
+              size="large"
+              onClick={() => navigate("/")}
+              sx={{
+                mt: 4,
+                px: 5,
+                py: 1.5,
+                borderRadius: 3,
+                fontSize: 16,
+                fontWeight: "bold",
+                textTransform: "none",
+                background: "linear-gradient(135deg,#0b7b3c,#22c55e)",
+                boxShadow: "0 10px 25px rgba(11,123,60,.3)",
+                "&:hover": {
+                  background: "linear-gradient(135deg,#096a34,#16a34a)",
+                },
+              }}
+            >
+              Continue Shopping
+            </Button>
+          </Card>
+        </Box>
       </>
     );
   const grandTotal =
